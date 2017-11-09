@@ -19,7 +19,7 @@ import java.util.Random;
 public class ArrayThree
 {  // begin class
 	
-	final static int MAX = 10;
+	final static int MAX = 100;
 	
 	public static void main(String args[])
 	{  // begin main
@@ -30,6 +30,8 @@ public class ArrayThree
 		int[] list;
 		list = new int[MAX];
 		Random Rand = new Random();
+		String out;
+		int i = 0;
 		
 	// ***** create objects *****
 		
@@ -42,6 +44,7 @@ public class ArrayThree
 	// ***** Print Banner *****
 	
 		Printer.printBanner("ArrayExercise 1 Q7");
+		out = Printer.getBanner();
 		
 	// ***** get input *****
 	
@@ -51,17 +54,37 @@ public class ArrayThree
 	
 	// ***** processing *****
 	
-		for (int i = 0; i < MAX; i++) {
+		while (i < MAX) {
 			list[i] = Rand.nextInt(100);
+			if (list[i] == 0) {
+				i = MAX;
+			}
+			i++;
 		}
 		
-		printList(list);
+		out += printList(list);
 		
-		System.out.println(listSum(list));
+		System.out.println("Total Sum:	" + listSum(list));
+		out += "Total Sum:	" + listSum(list) + "\n";
+		
+		System.out.println("Average:	" + listAvg(list));
+		out += "Average:	" + listAvg(list) + "\n";
+		
+		System.out.println("Maximum:	" + listMax(list));
+		out += "Maximum:	" + listMax(list) + "\n";
+		
+		System.out.println("Minimum:	" + listMin(list));
+		out += "Minimum:	" + listMin(list) + "\n\n";
+		
+		System.out.println();
+		
 		
 	// ***** output *****
 	
 		// all formatted ouput is printed in this section
+		
+		out += Printer.getClosing();
+		output(out);
 
 	// ***** closing message *****
 	
@@ -73,10 +96,13 @@ public class ArrayThree
 		JOptionPane.showMessageDialog(null, out);
 	}  // end output
 	
-	public static void printList(int[] list) {
+	public static String printList(int[] list) {
+		String out = "";
 		for (int i = 0; i < MAX; i++) {
 			System.out.println(i + ": " + list[i]);
+			out += i + ": " + list[i] + "\n";
 		}
+		return out;
 	}  // end printList
 	
 	public static int listSum(int[] list) {
@@ -85,5 +111,29 @@ public class ArrayThree
 			sum += list[i];
 		}
 		return sum;
-	}
+	}  // end listSum
+	
+	public static int listAvg(int[] list) {
+		return listSum(list) / MAX;
+	}  // end listAvg
+	
+	public static int listMax(int[] list) {
+		int max = list[0];
+		for (int i = 0; i < MAX; i++) {
+			if (list[i] > max) {
+				max = list[i];
+			}
+		}
+		return max;
+	}  // end listMax
+	
+	public static int listMin(int[] list) {
+		int min = list[0];
+		for (int i = 0; i < MAX; i++) {
+			if (list[i] < min) {
+				min = list[i];
+			}
+		}
+		return min;
+	}  // end listMin
 }  // end class
