@@ -44,7 +44,7 @@ public class ArrayThree
 	// ***** Print Banner *****
 	
 		Printer.printBanner("ArrayExercise 1 Q7");
-		out = Printer.getBanner();
+		out = Printer.getBanner("ArrayExercise 1 Q7");
 		
 	// ***** get input *****
 	

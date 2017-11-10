@@ -46,11 +46,15 @@
 	 /*******************************************************
 	  *Purpose: 		get the banner
 	  *Interface:
-	  *	in:			none
+	  *	in:			exercise (String)
 	  *	out:		banner (String)
 	  *******************************************************/
-	 public String getBanner() {
-		 return banner;		// return banner
+	 public String getBanner(String exercise) {
+		 return ("**********************************\n"
+			 		+ "NAME:        Caleb Beynon\n"
+			 		+ "Class:       CS30S\n"
+			 		+ "Assignment:  " + exercise + "\n"
+			 		+ "**********************************\n");		// return banner
 	 } // end getBanner()
 	 
 	 /*******************************************************
