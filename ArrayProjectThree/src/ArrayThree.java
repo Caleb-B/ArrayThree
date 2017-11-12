@@ -64,6 +64,8 @@ public class ArrayThree
 		
 		out += printList(list);
 		
+		System.out.println("");
+		
 		System.out.println("Total Sum:	" + listSum(list));
 		out += "Total Sum:	" + listSum(list) + "\n";
 		
@@ -76,7 +78,7 @@ public class ArrayThree
 		System.out.println("Minimum:	" + listMin(list));
 		out += "Minimum:	" + listMin(list) + "\n\n";
 		
-		System.out.println();
+		System.out.println("");
 		
 		
 	// ***** output *****
